@@ -1,16 +1,16 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout class="flex flex-col items-center justify-center text-center">
+	<img class="mb-[50px] size-[135px] mx-auto md:size-[175px]" src="/images/grupo-oliva-sello.svg" alt="Grupo oliva" />
+	<h1 class="font-bold mx-auto max-w-[550px] text-2xl mb-[30px]">Grupo Oliva is a restaurant group based in Mérida, Yucatán, founded in 2010.</h1>
+
+	<article class="w-full max-w-[580px] mx-auto">
+		<p>We focus on creating experiences that blend Mexican warmth with international concepts, paying attention to every detail—from quality ingredients and thoughtful preparation to atmosphere and service.</p>
+		<br />
+		<p>The group includes Oliva and Pizzería Oliva restaurants, the boutique hotel Casa Lecanda, and the inbound travel company Mérida Tours. Each of our spaces is designed to offer genuine hospitality and memorable moments around the table.</p>
+		<br />
+		<p>Our goal is simple: to give our guests the best in flavor, service, and ambiance, always with a personal touch.</p>
+	</article>
+</MainLayout>

@@ -1,0 +1,24 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export async function getStaticPaths() {
+	return [{ params: { locale: "en" } }, { params: { locale: "es" } }];
+}
+---
+
+<MainLayout class="flex flex-col items-center justify-center text-center">
+	<img class="mb-[50px] size-[135px] mx-auto md:size-[175px]" src="/images/grupo-oliva-sello.svg" alt="Grupo oliva" />
+	<h1 class="font-bold mx-auto max-w-[550px] text-2xl mb-[30px]">{t("title")}</h1>
+
+	<article class="w-full max-w-[580px] mx-auto">
+		<p>{t("description_1")}</p>
+		<br />
+		<p>{t("description_2")}</p>
+		<br />
+		<p>{t("description_3")}</p>
+	</article>
+</MainLayout>

@@ -1,0 +1,30 @@
+---
+import { languages } from "../i18n/ui";
+---
+
+<ul class="flex items-center gap-4 text-[14px]">
+	<li>
+		<a href={`/es/`}>ES</a>
+	</li>
+	<li><div class="h-[20px] w-[1px] bg-black"></div></li>
+	<li>
+		<a href={`/en/`}>EN</a>
+	</li>
+</ul>
+
+<script type="module">
+	import { initI18n } from "../i18n.js";
+
+	let i18n;
+
+	async function changeLang(lang) {
+		i18n = await initI18n(lang);
+		document.getElementById("output").innerHTML = i18n.t("key");
+		localStorage.setItem("lang", lang); // opcional
+	}
+
+	document.addEventListener("DOMContentLoaded", async () => {
+		const savedLang = localStorage.getItem("lang") || "en";
+		changeLang(savedLang);
+	});
+</script>
