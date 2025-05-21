@@ -1,13 +1,15 @@
 ---
-import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+import { cn } from "../utils/cn";
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <ul class="flex items-center gap-4 text-[14px]">
-	<li>
+	<li class={cn(lang === "es" ? "font-bold" : "opacity-55")}>
 		<a href={`/es/`}>ES</a>
 	</li>
 	<li><div class="h-[20px] w-[1px] bg-black"></div></li>
-	<li>
+	<li class={cn(lang === "en" ? "font-bold" : "opacity-55")}>
 		<a href={`/en/`}>EN</a>
 	</li>
 </ul>
